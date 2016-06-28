@@ -32,6 +32,7 @@ public class FabricanteDAOTest {
 
 	@SuppressWarnings("unused")
 	@Test
+	@Ignore
 	public void listar() {
 
 		FabricanteDAO dao = new FabricanteDAO();
@@ -42,6 +43,20 @@ public class FabricanteDAOTest {
 			System.out.println(fabricante.toString());
 
 		}
+
+	}
+
+	@Test
+	public void buscarPorCodigo() {
+		
+		FabricanteDAO dao = new FabricanteDAO();
+		
+		Fabricante f1 = dao.buscarPorCodigo(3l);
+		Fabricante f2 = dao.buscarPorCodigo(5l);
+		
+		System.out.println("F1"+f1);
+
+		System.out.println("F2"+f2);
 
 	}
 

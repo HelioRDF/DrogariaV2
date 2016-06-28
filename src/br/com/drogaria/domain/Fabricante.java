@@ -12,7 +12,9 @@ import javax.persistence.Table;
 @Entity // Indica que é uma entidade de Persistencia
 @Table(name = "tbl_fabricantes") // Informa que a entidade de Persistência está
 									// ligada a uma tabela no BD
-@NamedQueries({ @NamedQuery(name = "Fabricante.listar", query = "SELECT fabricante FROM	Fabricante fabricante") })
+@NamedQueries({ 
+	@NamedQuery(name = "Fabricante.listar", query = "SELECT fabricante FROM	Fabricante fabricante"),
+	@NamedQuery(name = "Fabricante.buscarPorCodigo", query = "SELECT fabricante FROM Fabricante fabricante WHERE fabricante.codigo = :codigo")})
 public class Fabricante {
 
 	@Id
